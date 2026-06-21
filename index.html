@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Paper Soccer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="app">
+
+    <aside id="sidebar">
+      <h1>Paper<br/>Soccer</h1>
+
+      <div id="player-indicator">
+        <div id="player-dot"></div>
+        <div>
+          <div id="player-name">Tour du Joueur 1</div>
+          <div id="bounce-info"></div>
+        </div>
+      </div>
+
+      <div id="scoreboard">
+        <div class="score-block">
+          <span class="score-label j1-color">Joueur 1</span>
+          <span id="score-j1" class="score-val j1-color">0</span>
+        </div>
+        <div id="timer">00:00</div>
+        <div class="score-block">
+          <span class="score-label j2-color" id="j2-label">Joueur 2</span>
+          <span id="score-j2" class="score-val j2-color">0</span>
+        </div>
+      </div>
+
+      <div id="mode-toggle">
+        <label><input type="radio" name="mode" value="2p" checked /> 2 Joueurs</label>
+        <label><input type="radio" name="mode" value="ai" /> vs IA</label>
+      </div>
+
+      <div id="controls">
+        <button id="btn-restart">Nouvelle Partie</button>
+        <button id="btn-undo">↩ Annuler</button>
+        <button id="btn-fullscreen">⛶ Plein écran</button>
+      </div>
+
+      <div id="legend">
+        <div class="legend-row"><span class="legend-dot j1-bg"></span> Joueur 1</div>
+        <div class="legend-row"><span class="legend-dot j2-bg"></span> Joueur 2 / IA</div>
+        <div class="legend-row"><span class="legend-dot bounce-bg"></span> Rebond</div>
+      </div>
+    </aside>
+
+    <main id="game-area">
+      <canvas id="field"></canvas>
+    </main>
+
+  </div>
+
+  <div id="message-overlay" class="hidden">
+    <div id="message-box">
+      <p id="message-text"></p>
+      <button id="btn-message-ok">Rejouer</button>
+    </div>
+  </div>
+
+  <script src="https://game-cdn.poki.com/scripts/v2/poki-sdk.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
